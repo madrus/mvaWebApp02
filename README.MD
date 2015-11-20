@@ -64,3 +64,38 @@ We can also create several `config.json` files per environment.
 ### secrets.json
 If you right click on the project and choose "Manage User Secrets" menu option,
 this file will be created or opened.
+
+## Publishing the website
+There are two main options to publishing our website: to the file system and to Azure cloud.
+
+### Publishing to the file system
+Choose any name for your profile, e.g. Test and by Settings put both checkmarks:
+
+    Settings
+        File Publish Options
+            - Delete all existing files prior to publish
+            - Compile source files into NuGet packages
+
+Now you can go to the project directory and you will find a lot of new stuff
+inside the artifacts folder (if you have chose the default publishing path):
+
+* `artifacts/bin/[project name]/Release/PublishOutput/wwwroot`
+* `artifacts/bin/[project name]/Release/PublishOutput/approot`
+
+Now you can FTP both folders to your hosting provider. The website itself
+is inside the `wwwroot` folder. And all the packages and run commands are 
+inside the `approot` folder. It is also possible to run the website by 
+dubble clicking on e.g. web.cmd.
+
+### Publishing to the Azure cloud
+Choose a new Azure profile (e.g. mvawithglenn) for your website and no database.
+
+That's it! 
+
+When your website is published, the browser will automatically start and open it.
+
+### Free Azure trials
+* a free trial account for 1 month with $200 on credit
+* a free [sandbox website](https://trywebsites.azurewebsites.net/)
+
+
